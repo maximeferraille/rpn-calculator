@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Realised by Maxime Ferraille & Kevin Leonard
 
 ## Available Scripts
 
