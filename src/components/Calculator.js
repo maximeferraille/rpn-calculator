@@ -92,9 +92,9 @@ class Calculator extends Component {
     [new_stack[new_stack.length-1],new_stack[new_stack.length-2]] = [new_stack[new_stack.length-2],new_stack[new_stack.length-1]]; 
     this.setState({ stack: new_stack });*/
     if(this.state.stack.length > 0){
-      var swapValue = this.state.stack[this.state.stack.length-1];
+      var swapValue = this.state.stack[0];
       var new_stack = this.state.stack;
-      new_stack[this.state.stack.length-1] = this.state.display_value;
+      new_stack[0] = this.state.display_value;
       this.setState({display_value: swapValue});
       this.setState({ stack: new_stack });
     }
