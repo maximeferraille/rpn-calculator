@@ -8,7 +8,7 @@ class Screen extends Component {
   render() {
     return(
       <div className={'display'}>
-        <ul>
+        <ul className="list-stack">
           {this.props.historic.map((value) => {
             return <li>{value}</li>
           })}

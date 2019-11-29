@@ -15,10 +15,12 @@ class Keypad extends Component {
 
   render() {
     return(
-      <div>
+      <div className="keyboard">
         <div>
           <button onClick={this.performOperation.bind(this,'clearall')}>CLR</button>
           <button onClick={this.performOperation.bind(this,'clear')}>C</button>
+          <button onClick={this.performOperation.bind(this,'change')}>+/-</button>
+          <button onClick={this.performOperation.bind(this,'swap')}>SWAP</button>
         </div>
         <div>
           <button onClick={this.appendToDisplay.bind(this,'7')}>7</button>
@@ -43,6 +45,9 @@ class Keypad extends Component {
           <button onClick={this.appendToDisplay.bind(this,'0')}>0</button>
           <button onClick={this.performOperation.bind(this,'stack')}>ENTER</button>
           <button onClick={this.performOperation.bind(this,'add')}>+</button>
+        </div>
+        <div>
+        <button onClick={this.performOperation.bind(this,'drop')}>DROP</button>
         </div>
       </div>
     );

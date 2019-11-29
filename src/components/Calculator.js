@@ -89,6 +89,21 @@ class Calculator extends Component {
     let new_display_value = parseFloat(numbers[0]) - parseFloat(numbers[1]);
     this.setState({display_value: new_display_value});
   }
+  doSwap = () => {
+    var new_stack = this.state.stack;
+    console.log(new_stack);
+    throw new Error("my error message");
+    /*[new_stack[new_stack.length-1],new_stack[new_stack.length-2]] = [new_stack[new_stack.length-2],new_stack[new_stack.length-1]]; 
+    this.setState({ stack: new_stack });*/
+  }
+  doDrop = () => {
+    if(this.state.stack.length > 0){
+    this.state.stack.shift();
+    }
+  }
+  doSignChange= () => {
+    this.setState({display_value: -1*this.state.display_value});
+  }
 
   performOperation = (operator) => {
     this.clearInputValue();
@@ -96,6 +111,14 @@ class Calculator extends Component {
     switch(operator) {
       case 'clearall':
         this.clearAll();
+        return;
+        break;
+      case 'change':
+        this.doSignChange();
+        return;
+        break;
+      case 'drop':
+        this.doDrop();
         return;
         break;
       case 'clear':
@@ -128,6 +151,9 @@ class Calculator extends Component {
         case 'divide':
           this.doDivide(numbers);
           break;
+        case 'swap':
+          this.doSwap(numbers);
+          break;
         default:
           this.flashError('Unsupported operation');
           break;
@@ -140,7 +166,7 @@ class Calculator extends Component {
   Liste des bouttons */
   render() {
     return(
-      <div>
+      <div className="calculator">
         <Screen current_value={this.state.display_value} historic={this.state.stack}/>
         <Keypad performOperation={this.performOperation} appendToDisplay={this.appendToDisplay} />
       </div>
