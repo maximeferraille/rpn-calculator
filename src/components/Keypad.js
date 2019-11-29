@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 
 class Keypad extends Component {
-  // Affichage d'un bouton qui prend une valeur dynamique
-  constructor(props) {
-    super(props);
-  }
-
   appendToDisplay = (label) => {
     this.props.appendToDisplay(label);
   }

@@ -15,7 +15,7 @@ class Calculator extends Component {
   appendToDisplay = (newNumber) => {
     var newValue = this.state.display_value;
 
-    if (newValue == '0') {
+    if (newValue === '0') {
       newValue = newNumber;
     } else {
       newValue += newNumber;
@@ -37,7 +37,7 @@ class Calculator extends Component {
     this.setState({display_value: '0', stack: []});
   }
   isFreshDisplay = () => {
-    return this.state.display_value == '0';
+    return this.state.display_value === '0';
   }
   hasTwoItems = () => {
     return (!this.isFreshDisplay() && this.state.stack.length > 0) || this.state.stack.length > 1;
@@ -58,14 +58,12 @@ class Calculator extends Component {
         first,
         second;
 
-    // if we have a number in the display, that's the first
     if (this.state.display_value !== '0') {
       second = this.state.display_value;
     } else {
       second = new_stack.shift();
     }
 
-    // and the second comes form the stack
     first = new_stack.shift();
 
     this.setState({ stack: new_stack });
@@ -110,31 +108,25 @@ class Calculator extends Component {
       case 'clearall':
         this.clearAll();
         return;
-        break;
       case 'change':
         this.doSignChange();
         return;
-        break;
       case 'drop':
         this.doDrop();
         return;
-        break;
       case 'clear':
         this.clearDisplay();
         return;
-        break;
       case 'swap':
         this.doSwap();
         return;
-        break;
       case 'stack':
         this.addToStack(this.state.display_value);
         this.clearDisplay();
         return;
-        break;
     }
 
-    // for the following operations we need two numbers
+    // Gestion des opérations necessitant deux valeurs dans la pile
     var numbers;
 
     if (this.hasTwoItems()) {
