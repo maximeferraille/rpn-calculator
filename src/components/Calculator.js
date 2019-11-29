@@ -104,12 +104,18 @@ class Calculator extends Component {
 
   }
   doDrop = () => {
-    if(this.state.stack.length > 0){
-      this.state.stack.shift();
-    }
-    else{
+    var pop = 0;
+    if(this.state.display_value != 0)
+    {
+      pop = 1;
       this.clearDisplay();
     }
+    if(this.state.stack.length > 0 && pop == 0){
+      this.state.stack.shift();
+    }
+    /*else{
+      this.clearDisplay();
+    }*/
   }
   doSignChange= () => {
     this.setState({display_value: -1*this.state.display_value});
