@@ -91,10 +91,8 @@ class Calculator extends Component {
   }
   doSwap = () => {
     var new_stack = this.state.stack;
-    console.log(new_stack);
-    throw new Error("my error message");
-    /*[new_stack[new_stack.length-1],new_stack[new_stack.length-2]] = [new_stack[new_stack.length-2],new_stack[new_stack.length-1]]; 
-    this.setState({ stack: new_stack });*/
+    [new_stack[new_stack.length-1],new_stack[new_stack.length-2]] = [new_stack[new_stack.length-2],new_stack[new_stack.length-1]]; 
+    this.setState({ stack: new_stack });
   }
   doDrop = () => {
     if(this.state.stack.length > 0){
@@ -125,6 +123,10 @@ class Calculator extends Component {
         this.clearDisplay();
         return;
         break;
+      case 'swap':
+        this.doSwap();
+        return;
+        break;
       case 'stack':
         this.addToStack(this.state.display_value);
         this.clearDisplay();
@@ -150,9 +152,6 @@ class Calculator extends Component {
           break;
         case 'divide':
           this.doDivide(numbers);
-          break;
-        case 'swap':
-          this.doSwap(numbers);
           break;
         default:
           this.flashError('Unsupported operation');

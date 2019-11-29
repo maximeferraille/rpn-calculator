@@ -10,7 +10,7 @@ class Screen extends Component {
       <div className={'display'}>
         <ul className="list-stack">
           {this.props.historic.map((value) => {
-            return <li>{value}</li>
+            return <li className="historic">{value}</li>
           })}
           <li>{this.props.current_value}</li>
         </ul>
