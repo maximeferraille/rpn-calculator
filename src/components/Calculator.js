@@ -136,7 +136,8 @@ class Calculator extends Component {
       this.flashError('We need more numbers');
     }
   }
-
+  /* Écran d'affichage
+  Liste des bouttons */
   render() {
     return(
       <div>
