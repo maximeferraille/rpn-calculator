@@ -88,13 +88,27 @@ class Calculator extends Component {
     this.setState({display_value: new_display_value});
   }
   doSwap = () => {
-    var new_stack = this.state.stack;
+    /*var new_stack = this.state.stack;
     [new_stack[new_stack.length-1],new_stack[new_stack.length-2]] = [new_stack[new_stack.length-2],new_stack[new_stack.length-1]]; 
-    this.setState({ stack: new_stack });
+    this.setState({ stack: new_stack });*/
+    if(this.state.stack.length > 0){
+      var swapValue = this.state.stack[this.state.stack.length-1];
+      var new_stack = this.state.stack;
+      new_stack[this.state.stack.length-1] = this.state.display_value;
+      this.setState({display_value: swapValue});
+      this.setState({ stack: new_stack });
+    }
+    else{
+      console.log("You need more numbers");
+    }
+
   }
   doDrop = () => {
     if(this.state.stack.length > 0){
-    this.state.stack.shift();
+      this.state.stack.shift();
+    }
+    else{
+      this.clearDisplay();
     }
   }
   doSignChange= () => {

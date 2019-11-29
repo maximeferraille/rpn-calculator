@@ -11,38 +11,38 @@ class Keypad extends Component {
   render() {
     return(
       <div className="keyboard">
-        <div>
+        <div className="keyboard-line">
           <button onClick={this.performOperation.bind(this,'clearall')}>CLR</button>
           <button onClick={this.performOperation.bind(this,'clear')}>C</button>
           <button onClick={this.performOperation.bind(this,'change')}>+/-</button>
-          <button onClick={this.performOperation.bind(this,'swap')}>SWAP</button>
+          <button onClick={this.performOperation.bind(this,'add')}>+</button>
         </div>
-        <div>
+        <div className="keyboard-line">
           <button onClick={this.appendToDisplay.bind(this,'7')}>7</button>
           <button onClick={this.appendToDisplay.bind(this,'8')}>8</button>
           <button onClick={this.appendToDisplay.bind(this,'9')}>9</button>
           <button onClick={this.performOperation.bind(this,'divide')}>/</button>
         </div>
-        <div>
+        <div className="keyboard-line">
           <button onClick={this.appendToDisplay.bind(this,'4')}>4</button>
           <button onClick={this.appendToDisplay.bind(this,'5')}>5</button>
           <button onClick={this.appendToDisplay.bind(this,'6')}>6</button>
           <button onClick={this.performOperation.bind(this,'multiply')}>*</button>
         </div>
-        <div>
+        <div className="keyboard-line">
           <button onClick={this.appendToDisplay.bind(this,'1')}>1</button>
           <button onClick={this.appendToDisplay.bind(this,'2')}>2</button>
           <button onClick={this.appendToDisplay.bind(this,'3')}>3</button>
           <button onClick={this.performOperation.bind(this,'subtract')}>-</button>
         </div>
-        <div>
+        <div className="keyboard-line">
           <button onClick={this.appendToDisplay.bind(this,'.')}>.</button>
           <button onClick={this.appendToDisplay.bind(this,'0')}>0</button>
-          <button onClick={this.performOperation.bind(this,'stack')}>ENTER</button>
-          <button onClick={this.performOperation.bind(this,'add')}>+</button>
+          <button onClick={this.performOperation.bind(this,'swap')}>SWAP</button>
+          <button onClick={this.performOperation.bind(this,'drop')}>DROP</button>
         </div>
-        <div>
-        <button onClick={this.performOperation.bind(this,'drop')}>DROP</button>
+        <div className="keyboard-line last-line">
+        <button id="enter" onClick={this.performOperation.bind(this,'stack')}>ENTER</button>
         </div>
       </div>
     );

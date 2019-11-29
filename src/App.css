@@ -7,13 +7,14 @@ html, body{
 }
 
 h1{
-  color: blue;
+  color: #20B2AA;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .calculator{
   background: #20B2AA;
-  width: 210px;
+  width: 300px;
   margin: 0 auto;
   padding: 5px;
 }
@@ -23,17 +24,38 @@ h1{
   flex-wrap:wrap;
 }
 
-.calculator .keyboard .buttons{
-
+.display .list-stack{
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.calculator .btn{
+.display{
+  background: #D3D3D3;
+  min-height: 100px;
+  padding: 5px;
+}
+
+.keyboard-line{
+  text-align: center;
+}
+
+.keyboard-line{
+  width: 100%;
+}
+
+#enter{
+  width: 100%;
+}
+
+.calculator .keyboard-line button{
 font-weight: 400;
 text-align: center;
 height: 40px;
 width: 70px;
 font-size: 15px;
 margin-top: 5px;
+margin-right: 5px;
 white-space: nowrap;
 border: 1px solid gray;
 padding: .375rem .75rem;
